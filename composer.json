@@ -1,0 +1,22 @@
+{
+    "name": "frajavimopu/template",
+    "description": "php-core project",
+    "minimum-stability": "stable",
+    "license": "Apache-2.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Francisco Javier Montecillo Puente",
+            "email": "frajavimopu@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "FJMP\\Tests\\": "tests",
+            "FJMP\\": "src"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    {{usuario_tipo}}: {{ usuario_nombre }}
+{% endblock %}
+
+{% set navigation = 'logged_in_encargado'  %}
+{% set docente = 'Docente' %}
+{% set is_docente = docente == '{{usuario_tipo}}' %}
+
+{% block usuario_nombre %}
+	{{ usuario_tipo}}: {{ usuario_nombre }} : {{is_docente}}
+{% endblock %}
+
+
+{% block content %}
+  {% if is_docente %}
+    <div> CONTENIDO DE DOCENTE</div>
+{% endif %}
+
+ {% if not is_docente %}
+    <div> CONTENIDO DE COORDINADOR</div>
+{% endif %}
+
+  {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+  {% endif %}
+
+  <div class="card" style="border: solid 0px">
+<a name="" id="" class="btn btn-success" href="Crearlo.twig" role="button"
+        >Agregar docentes</a>
+        <br/>
+    <div class="card-body-xxl ">
+        <div class="table-responsive-xxl">
+            <table class="table">
+                <thead  class="thead-light table-bordered">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Comentario</th>
+                        <th scope="col">Nombre del Docente</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Prioridad</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Archivo</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td> </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                         <a name="" id="" class="btn btn-info" href="Editarlo.twig?txtID=<?php echo $registros['ID']?>" role="button">Editar</a>
+                      |
+                      <a name="" id="" class="btn btn-danger" href="Indexes.php?txtID=<?php echo $registros['ID']?>" role="button">Eliminar</a>
+                  </td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+{% endblock %}

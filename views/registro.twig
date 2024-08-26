@@ -1,0 +1,41 @@
+{% extends 'layout.twig' %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% set navigation = 'no_logged_in' %}
+
+{% block content %}
+    {% if errorMessage is defined %}
+        <strong>{{ errorMessage }}</strong>
+    {% endif %}
+
+    <div class="card border-dark mx-auto" style="width: 38rem;">
+    <div class="bg-primary card-header text-white fw-bold" style="text-align: center; "><img src="/views/images/unnamed.png" alt="" height="100px" width="300px"></div>
+    <div class="bg-primary card-body " style="text-align: center; ">
+    <form action="/registro" method="post">
+
+    <div class="mb-3">
+       
+        <input type="text" class="form-control" name="nombre" aria-describedby="helpId" placeholder="Nombre">
+</div>
+<div class="mb-3">
+        
+        <input type="text" class="form-control" name="tipo" aria-describedby="helpId" placeholder="Docente o Coordinador">
+</div>
+<div class="mb-3">
+
+        <input type="password" class="form-control" name="clave" aria-describedby="helpId" placeholder="Constraseña">
+</div>
+<div class="mb-3">
+
+        <input type="text" class="form-control" name="email" aria-describedby="helpId" placeholder="E-mail">
+</div>
+        <input type="submit"  class="btn btn-fw-bold btn-outline-light btn-lg">
+        
+    </form>
+
+    </div>
+     </div>
+{% endblock %}
