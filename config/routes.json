@@ -1,0 +1,18 @@
+{
+  "": {
+  	"controller":"Inicio",
+  	"method": "inicio"
+  },
+  "login": {
+  	"controller":"Usuario",
+  	"method":"login"
+  },
+   "logout": {
+  	"controller":"Usuario",
+  	"method":"logout"
+  },
+  "registro": {
+  	"controller":"Usuario",
+  	"method":"registro"
+  }
+}
